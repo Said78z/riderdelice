@@ -1,12 +1,20 @@
 'use client'
 
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 interface DashboardLayoutProps {
   children: React.ReactNode
 }
 
 export function DashboardLayout({ children }: DashboardLayoutProps) {
+  const router = useRouter()
+
+  function handleLogout() {
+    localStorage.removeItem('rider_hub_auth')
+    router.push('/login')
+  }
+
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-slate-900">
       {/* Sidebar */}
@@ -28,10 +36,16 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           </Link>
         </nav>
 
-        <div className="border-t border-slate-800 pt-4">
+        <div className="border-t border-slate-800 pt-4 space-y-2">
           <Link href="/" className="flex items-center gap-2 px-4 py-2 text-slate-400 hover:text-white transition-colors text-sm">
             ← Retour à l'accueil
           </Link>
+          <button
+            onClick={handleLogout}
+            className="w-full flex items-center gap-2 px-4 py-2 text-red-400 hover:text-red-300 transition-colors text-sm"
+          >
+            🚪 Déconnexion
+          </button>
         </div>
       </aside>
 
@@ -42,3 +56,4 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
     </div>
   )
 }
+

@@ -1,12 +1,15 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { DashboardLayout } from '@/components/DashboardLayout'
 import { StatsCards } from '@/components/StatsCards'
 import { StudentsTable } from '@/components/StudentsTable'
 import { Student, StudentStatus } from '@/lib/types'
 
 export default function Dashboard() {
+  const router = useRouter()
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [students, setStudents] = useState<Student[]>([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
@@ -19,9 +22,24 @@ export default function Dashboard() {
   })
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
 
+  // Check auth on mount
   useEffect(() => {
-    fetchStudents()
-  }, [])
+    const isAuth = localStorage.getItem('rider_hub_auth') === 'true'
+    if (!isAuth) {
+      router.push('/login')
+    } else {
+      setIsAuthenticated(true)
+      fetchStudents()
+    }
+  }, [router])
+
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-900">
+        <p className="text-slate-400">Redirection...</p>
+      </div>
+    )
+  }
 
   async function fetchStudents() {
     try {

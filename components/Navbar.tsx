@@ -9,7 +9,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center text-white font-bold">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-400 to-cyan-500 flex items-center justify-center text-white font-bold">
               RH
             </div>
             <span className="font-bold text-white hidden sm:inline">Rider Hub</span>
@@ -18,22 +18,22 @@ export default function Navbar() {
           {/* Links */}
           <div className="flex items-center gap-6">
             <Link
-              href="/#features"
+              href="/#services"
               className="text-slate-300 hover:text-white transition-colors text-sm"
             >
-              Fonctionnalités
+              Services
             </Link>
             <Link
-              href="/#steps"
+              href="/#pricing"
               className="text-slate-300 hover:text-white transition-colors text-sm"
             >
-              Comment ça marche
+              Tarifs
             </Link>
             <Link
-              href="/dashboard"
-              className="px-4 py-2 bg-teal-500 hover:bg-teal-600 text-white rounded-lg font-semibold transition-colors text-sm"
+              href="/login"
+              className="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg font-semibold transition-colors text-sm"
             >
-              Dashboard
+              Admin
             </Link>
           </div>
         </div>

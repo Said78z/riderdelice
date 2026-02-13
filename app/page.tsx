@@ -1,16 +1,14 @@
-import Hero from '@/components/Hero'
-import Features from '@/components/Features'
-import Steps from '@/components/Steps'
-import CTASection from '@/components/CTASection'
+import AgencyHero from '@/components/AgencyHero'
+import AgencyServices from '@/components/AgencyServices'
+import PricingSection from '@/components/PricingSection'
 import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
     <div className="bg-slate-900">
-      <Hero />
-      <Features />
-      <Steps />
-      <CTASection />
+      <AgencyHero />
+      <AgencyServices />
+      <PricingSection />
       <Footer />
     </div>
   )
