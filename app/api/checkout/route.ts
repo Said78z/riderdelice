@@ -7,17 +7,17 @@ const STRIPE_SECRET = process.env.STRIPE_SECRET_KEY
 const PLANS = {
   bronze: {
     name: 'Bronze - Création KBIS',
-    amount: 79900, // €799.00
+    amount: 29900, // €299.00
     description: 'Création KBIS + suivi activation Deliveroo',
   },
   silver: {
     name: 'Silver - Accompagnement complet',
-    amount: 119900, // €1199.00
+    amount: 59900, // €599.00
     description: 'KBIS + documents + 1 appel coaching',
   },
   gold: {
     name: 'Gold - Support prioritaire',
-    amount: 149900, // €1499.00
+    amount: 99900, // €999.00
     description: 'Tout + support 24/7 + garantie activation 30j',
   },
 }

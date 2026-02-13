@@ -11,7 +11,7 @@ export default function PricingSection() {
     {
       id: 'bronze',
       name: 'Bronze',
-      price: 799,
+      price: 299,
       description: 'Parfait pour démarrer',
       features: [
         '✓ Création KBIS en ligne',
@@ -26,7 +26,7 @@ export default function PricingSection() {
     {
       id: 'silver',
       name: 'Silver',
-      price: 1199,
+      price: 599,
       description: 'Recommandé (50% de nos clients)',
       features: [
         '✓ Tout du forfait Bronze',
@@ -42,7 +42,7 @@ export default function PricingSection() {
     {
       id: 'gold',
       name: 'Gold',
-      price: 1499,
+      price: 999,
       description: 'Pour les riders sérieux',
       features: [
         '✓ Tout du forfait Silver',

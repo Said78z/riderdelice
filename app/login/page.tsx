@@ -95,13 +95,6 @@ export default function LoginPage() {
               {loading ? 'Connexion...' : 'Se connecter'}
             </button>
           </form>
-
-          {/* Demo credentials */}
-          <div className="mt-6 p-4 bg-slate-900/50 rounded-lg border border-slate-700">
-            <p className="text-xs text-slate-400 mb-2 font-semibold">Credentials démo:</p>
-            <p className="text-xs text-slate-400">Email: <span className="text-slate-300">admin@riderhub.fr</span></p>
-            <p className="text-xs text-slate-400">Password: <span className="text-slate-300">admin123@</span></p>
-          </div>
         </div>
 
         {/* Back link */}
